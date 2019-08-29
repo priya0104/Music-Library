@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.779
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment1", "Assignment1\Assignment1.csproj", "{00C7A5B6-9026-4A24-A017-F95A3EE4A893}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music_Library", "Assignment1\Music_Library.csproj", "{00C7A5B6-9026-4A24-A017-F95A3EE4A893}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

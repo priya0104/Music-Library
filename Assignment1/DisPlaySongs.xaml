@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="Assignment1.DisPlaySongs"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Assignment1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    d:DesignWidth="600"
+    d:DesignHeight="400">
+
+    <Grid>
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="10*"/>
+            
+        </Grid.RowDefinitions>-->
+        
+        <StackPanel  Margin="24,0,0,0" Orientation="Horizontal" HorizontalAlignment="Center" Name="displaySongs">
+            <ListView ItemsSource="{Binding Mode=OneWay}"                   
+                IsItemClickEnabled="True"  ItemClick="ListView_ItemClick"
+                ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Song" >
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock FontSize="16" Text="{x:Bind Title }" Margin="24,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                            <TextBlock FontSize="10" Text="{x:Bind Artist}" Margin="24,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                            <TextBlock FontSize="10" Text="{x:Bind Duration}" Margin="24,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        
+        <!--<StackPanel Orientation="Horizontal" Margin="24,0,0,0" >
+            <MediaPlayerElement x:Name="mediaPlayer" AutoPlay="False"  AreTransportControlsEnabled="True" Width="1000"/>
+        </StackPanel>-->
+        
+   
+    </Grid>
+</Page>

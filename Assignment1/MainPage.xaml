@@ -5,10 +5,41 @@
     xmlns:local="using:Assignment1"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Windows10FallCreatorsUpdate="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 5)"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+     d:DesignWidth="600"
+     d:DesignHeight="400">
 
-    <Grid>
-
+    <Grid x:Name="mainGrid" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <Windows10FallCreatorsUpdate:NavigationView x:Name="nvSample" Header="My Music" PaneDisplayMode="Left"
+                                                    ItemInvoked="NvSample_ItemInvoked" Loaded="NvSample_Loaded" Grid.Row="0" 
+                                                    SelectionChanged="NvSample_SelectionChanged" >
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="Folder" Content="Album" x:Name="Albums" Tag="albums" />
+                <NavigationViewItem Icon="MusicInfo" Content="Songs" x:Name="Song" Tag="song"  />                
+                <NavigationViewItem Icon="Play" Content="Play List" x:Name="PlayList" Tag="playList" />
+                <NavigationViewItem Icon="Add" Content="Add Songs" x:Name="Add_Songs" Tag="add_songs" />
+            </NavigationView.MenuItems>
+            
+            <!--<Frame x:Name="contentFrame"/>-->
+            <Frame x:Name="contentFrame" Margin="24">
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition/>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+        </Windows10FallCreatorsUpdate:NavigationView>
+        
+        
+        <!--Media Player-->
+        <StackPanel Orientation="Horizontal" x:FieldModifier="public" Grid.Row="1" Name="stackForMusic">
+            <MediaPlayerElement x:FieldModifier="public" x:Name="mediaPlayer" AutoPlay="False"  AreTransportControlsEnabled="True" Width="800"/>
+        </StackPanel>
     </Grid>
 </Page>
